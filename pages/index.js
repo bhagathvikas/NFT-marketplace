@@ -1,4 +1,5 @@
-import {useAddress,useMetamask} from '@thirdweb-dev/react'
+import {useAddress,useMetamask} from '@thirdweb-dev/react';
+import Main from '../components/Home/'
 
 
 
@@ -13,18 +14,17 @@ export default function Home() {
   const connectWithMetamask = useMetamask()
   const address = useAddress()
 
-  const Auth = () =>{
-     return (
+const Auth= ()=>{
+
+  return (
     <div className={style.wrapper}>
       <button onClick={connectWithMetamask}
-        className={style.connectWalletBtn}
-        
-        >Connect Metamask</button>
-    
-    </div>
+        className= {style.connectWalletBtn}
+        >connectMetamask</button>
+      </div>
   )
 }
-  return <>hello</>
+  return <>{address ? <Main/> : Auth()}</>
     
   }
   
