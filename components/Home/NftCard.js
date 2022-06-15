@@ -21,6 +21,17 @@ const style = {
 const NftCard = ({listing}) => {
   return (
     <div className={style.wrapper}>
+      <div className={style.imageContainer}>
+        <Image
+          className={style.nftImage}
+          src = {listing.asset.image}
+          height = {340}
+          width = {340}
+          
+          
+          />
+      
+      </div>
       
       <div className= {style.nftLowerConstainer}>
         <div className={style.nftInfoContainer}>
@@ -40,10 +51,10 @@ const NftCard = ({listing}) => {
         
         </div>
           <div className={style.wethImageContainer}>
-            <Image
+             <Image
               height= {16}
               width = {16}
-              src = 'weth-logo.svg'
+              src = '/public/weth-logo.svg'
               alt= 'weth'
               
               />
