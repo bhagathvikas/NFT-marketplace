@@ -6,8 +6,17 @@ import {BigNumber} from "ethers"
 import TopNavbarLayout  from "../../../layouts/TopNavbarLayout"
 import NFTImage from '../../../components/NFTDetails/NFTImage'
 import NFTSalesInfo from '../../../components/NFTDetails/NFTSalesInfo'
+import NFTDetails from '../../../components/NFTDetails/NFTDetails'
+import NFTBasicInfo from '../../../components/NFTDetails/NFTBasicInfo'
 
 const style = {
+  wrapper:`flex h-[100vh] mx-auto max-width-2xl flex-col spcae-y-4 dark:bg-[#202226] py-4 lg:max-w-none lg:py-8 lg:px-24`,
+  nftContainer:` flex flex-col lg:flex-row  lg:space-x-4 `,
+  leftContainer:`flex flex-col space-y-4 `,
+  leftElement :` hidden lg:block`,
+  rightContainer:`   flex flex-1 flex-col space-y-4`,
+  buyoutContainer: ``
+  
   
 }
 
@@ -73,13 +82,13 @@ const getListing = async () =>{
         </div>
         <div className = {style.leftElement}>
 
-          {/*<NFTDetails/> */}
+          <NFTDetails/> 
         </div>
         
         
         </div>
         <div className={style.rightContainer}>
-        {/*<NFTBasicInfo/> */}
+        <NFTBasicInfo name={listing?.asset?.name}/> 
         </div>
         <div  className={style.Container}>
           <div className={style.buyoutContainer}>
